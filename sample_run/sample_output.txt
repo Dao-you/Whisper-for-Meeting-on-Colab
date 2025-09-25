@@ -1,11 +1,19 @@
+→ De-loop retry 2/3: Reset (condition_on_previous_text=False, no_repeat_ngram_size=2, compression_ratio_threshold=1.35)
+  ↳ De-loop sentinel escalation triggered due to:
+     • repeat_streak=9 lasting 15.0s near 00:23:12,000
+    → Retrying with tighter decoding guardrails ...
+→ De-loop retry 3/3: Reinforce (condition_on_previous_text=False, no_repeat_ngram_size=3, compression_ratio_threshold=1.3)
+  ↳ De-loop sentinel noted repeats but below escalation thresholds; keeping current parameters.
+
 [Transcription Metrics]
 → faster-whisper compute_type: float16
 → VAD preset: Aggressive (silence ≥ 0.80s → 800 ms)
 → Language: zh (p=0.97)
-→ Audio length: 1850.42s；Speech kept: 1612.75s；VAD removed: 237.67s
+→ Audio length: 1850.42s；Raw speech: 1715.30s；VAD removed: 135.12s；Post-filter removed: 92.55s；Speech kept: 1622.75s
 → compression_ratio_threshold hits: 1 segments
-→ Max consecutive repeat streak: 4
-→ No de-loop sentinel events detected.
+→ Max consecutive repeat streak: 9
+   ⚠️ Event 1: 00:23:12,000 → 00:23:27,000 (duration≈15.0s, repeats=9, tag=Reinforce)
+   ↳ escalation note: repeat_streak=9 lasting 15.0s near 00:23:12,000
 
 [Summary Metrics]
 → ctx_window candidates: [12288, 16384, 8192] | selected: 12288
