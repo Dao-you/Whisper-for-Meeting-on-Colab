@@ -1,0 +1,14 @@
+[Transcription Metrics]
+→ faster-whisper compute_type: float16
+→ VAD preset: Aggressive (silence ≥ 0.80s → 800 ms)
+→ Language: zh (p=0.97)
+→ Audio length: 1850.42s；Speech kept: 1612.75s；VAD removed: 237.67s
+→ compression_ratio_threshold hits: 1 segments
+→ Max consecutive repeat streak: 4
+→ No de-loop sentinel events detected.
+
+[Summary Metrics]
+→ ctx_window candidates: [12288, 16384, 8192] | selected: 12288
+  - Map 01: in=612 tok, out=574 tok, hit_limit=False (ratio=0.72)
+  - Map 02: in=598 tok, out=601 tok, hit_limit=False (ratio=0.75)
+  ↳ Reduce: in=1189 tok, out=912 tok, hit_limit=False (ratio=0.61)
