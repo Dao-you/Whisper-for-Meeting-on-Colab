@@ -1,6 +1,8 @@
 # Whisper Meeting Pipeline – Changelog & Notes
 
 ## 本次調整摘要
+- ✅ 修復跨行訊息列印（Runtime reset 提示 / yt-dlp cookies / GPU 載入失敗），改用多個 `print()` 或括號串接避免再度觸發 `SyntaxError`。
+- ✅ 在依賴安裝 cell 補上 `import importlib`，確保 `importlib.util.find_spec` 不會出現 `NameError`。
 - ✅ 修復 `run_transcription_attempt()` 內未閉合的 f-string，改用多行 `print()` 並統一串接訊息，避免再度觸發 `SyntaxError`。
 - ✅ 僅保留單一 `ensure_harmony_formatter()` 實作（上方 Utility 區塊），刪除後段重複定義以降低維護風險。
 - ✅ 移除未使用的 `loop_buffer`，改以新的去重邏輯與統計欄位追蹤語音片段。
